@@ -7,7 +7,13 @@ import './css/font-awesome.min.css'
 class BanditSection extends Component {
   render() {
     return (
-      <section class='banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right'>
+      <section class={ this.props.sectionType +
+        ' ' + this.props.sectionOrientation +
+        ' ' + this.props.sectionAlignment +
+        ' ' + this.props.imagePosition +
+        ' ' + this.props.screenFill +
+        ' ' + this.props.fadeStyle
+      }>
         <div class="content">
         {
           this.props.banditSectionContent
