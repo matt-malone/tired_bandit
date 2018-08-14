@@ -3,6 +3,7 @@ import './App.css';
 import './css/main.css'
 import './css/noscript.css'
 import './css/font-awesome.min.css'
+import handleViewport from 'react-in-viewport';
 
 class BanditSection extends Component {
   componentDidMount(){
@@ -10,16 +11,17 @@ class BanditSection extends Component {
   }
   componentWillUnmount(){
   }
-  render() {
+  render(props: { inViewport: boolean }) => {
+    const { inViewport, innerRef } = props;
     return (
-      <section className={ 'style1 '
-        + this.props.sectionType +
+      <section className={
+        this.props.sectionType + 'viewport-block style1 ' +
         ' ' + this.props.sectionOrientation +
         ' ' + this.props.sectionAlignment +
         ' ' + this.props.imagePosition +
         ' ' + this.props.screenFill +
-        ' ' + this.props.fadeStyle
-      }>
+        ' ' + this.props.inViewport ? this.props.fadeStyle : ''
+      } ref={innerRef}>
         <div className="content">
         {
           this.props.banditSectionContent

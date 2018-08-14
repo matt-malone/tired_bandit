@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-lazyload": "^2.3.0"
+    "react-lazyload": "^2.3.0",
+    "react-spring": "^5.6.6"
   }
 }
