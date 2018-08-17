@@ -69,6 +69,6 @@ class BanditSectionBlock extends Component {
     );
   };
 };
-const BanditSection = handleViewport(BanditSectionBlock, {rootMargin:"-1.0px"},{disconnectOnLeave:true});
+const BanditSection = handleViewport(BanditSectionBlock, {rootMargin:"-1.0px"});
 
 export default BanditSection;

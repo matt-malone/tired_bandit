@@ -40,11 +40,6 @@ class App extends Component {
             sectionAlignment='content-align-left'
             imagePosition='image-position-left'
             screenFill='fullscreen'
-            disconnectOnLeave={true}
-            // myViewCount={this.state.viewCount}
-            // myLeaveCount={this.state.leaveCount}
-            // onEnterViewport={()=> this.setState({ viewCount: this.state.viewCount+1})}
-            // onLeaveViewport={()=> this.setState({ leaveCount: this.state.leaveCount+1})}
             fadeStyle=''
             >
             </BanditSection>
@@ -64,11 +59,6 @@ class App extends Component {
               imagePosition='image-position-center'
               screenFill='fullscreen'
               fadeStyle=''
-              disconnectOnLeave={true}
-              // myViewCount={this.state.viewCount2}
-              // myLeaveCount={this.state.leaveCount2}
-              // onEnterViewport={()=> this.setState({ viewCount: this.state.viewCount2+1})}
-              // onLeaveViewport={()=> this.setState({ leaveCount: this.state.leaveCount2+1})}
               >
               </BanditSection>
 
