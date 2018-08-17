@@ -5,28 +5,27 @@ import './css/noscript.css'
 import './css/font-awesome.min.css'
 import BanditSection from './BanditSection.js'
 import BrowserDetection from 'detect-browser'
-import ReactDOM from 'react-dom'
-import LazyLoad from 'react-lazyload'
-import { Spring } from 'react-spring'
-import { Transition } from 'react-spring'
+// import ReactDOM from 'react-dom'
+// import LazyLoad from 'react-lazyload'
+// import { Spring } from 'react-spring'
+// import { Transition } from 'react-spring'
 import { Parallax, ParallaxLayer } from 'react-spring'
+
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {};
-
+    this.state = {
+      viewCount:0,
+      leaveCount:0,
+      viewCount2:0,
+      leaveCount2:0
+    };
   }
-  componentDidMount(){
-
-  }
-
   render() {
     const browser = BrowserDetection.detect();
 
     return (
       <div className="App">
-      <Parallax pages={2}>
-        <ParallaxLayer offset={0} speed={0.2}>
           <BanditSection
               banditSectionContent={
                 <div><h1>{browser.name + '-' + browser.version}</h1>
@@ -41,14 +40,38 @@ class App extends Component {
             sectionAlignment='content-align-left'
             imagePosition='image-position-left'
             screenFill='fullscreen'
+            disconnectOnLeave={true}
+            // myViewCount={this.state.viewCount}
+            // myLeaveCount={this.state.leaveCount}
+            // onEnterViewport={()=> this.setState({ viewCount: this.state.viewCount+1})}
+            // onLeaveViewport={()=> this.setState({ leaveCount: this.state.leaveCount+1})}
             fadeStyle=''
             >
             </BanditSection>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0.5}>
-            second Page
-        </ParallaxLayer>
-    </Parallax>
+            <BanditSection
+                banditSectionContent={
+                  <div><h1>{browser.name + '-' + browser.version}</h1>
+                  <p className="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
+                  <ul className="actions stacked">
+                    <li><a href="#first" className="button big wide smooth-scroll-middle">Get Started</a></li>
+                  </ul>
+                </div>
+              }
+              sectionType='spotlight'
+              sectionOrientation='orient-right'
+              sectionAlignment='content-align-left'
+              sectionIteration='1'
+              imagePosition='image-position-center'
+              screenFill='fullscreen'
+              fadeStyle=''
+              disconnectOnLeave={true}
+              // myViewCount={this.state.viewCount2}
+              // myLeaveCount={this.state.leaveCount2}
+              // onEnterViewport={()=> this.setState({ viewCount: this.state.viewCount2+1})}
+              // onLeaveViewport={()=> this.setState({ leaveCount: this.state.leaveCount2+1})}
+              >
+              </BanditSection>
+
 {
 //       <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
 //     {styles => <div style={styles}>i will fade in</div>}
